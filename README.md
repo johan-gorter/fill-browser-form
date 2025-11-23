@@ -23,7 +23,14 @@ This Skill guides Claude to help users:
 
 ## Installation
 
-### Creating the ZIP file
+### Quick Install
+
+1. Download [fill-browser-form.zip](https://github.com/johan-gorter/fill-browser-form/releases/latest/download/fill-browser-form.zip)
+2. Go to Claude → Settings → Capabilities → Skills
+3. Upload the ZIP file
+4. Enable the skill
+
+### Manual Installation (for development)
 
 From the **parent directory** (e.g., `d:\github`), run:
 
@@ -41,10 +48,7 @@ cd .. && zip -r fill-browser-form.zip fill-browser-form && cd fill-browser-form
 
 This creates a ZIP with the correct structure where `fill-browser-form/` is the root folder containing `Skill.md` and other files.
 
-### Uploading to Claude
-
-1. Upload the generated `fill-browser-form.zip` to Claude at Settings > Capabilities > Skills
-2. Enable the skill
+Then upload the generated `fill-browser-form.zip` to Claude at Settings > Capabilities > Skills
 
 ## Example Use Case
 
@@ -58,10 +62,14 @@ Claude will then use this skill to guide you through the process of creating a c
 - Access to paste content into Claude
 - Basic understanding of running JavaScript in browser console
 
+## Contributing
+
+Contributions are welcome! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
+
 ## Version
 
 1.0.0
 
 ## License
 
-MIT
+MIT - see [LICENSE](LICENSE) file for details
