@@ -34,19 +34,41 @@ This Skill guides Claude to help users:
 
 From the **parent directory** (e.g., `d:\github`), run:
 
-**PowerShell:**
-
-```powershell
-cd ..; Compress-Archive -Path fill-browser-form -DestinationPath fill-browser-form.zip -Force; cd fill-browser-form
-```
-
-**Bash/sh:**
+**Python (recommended - works on all platforms):**
 
 ```bash
-cd .. && zip -r fill-browser-form.zip fill-browser-form && cd fill-browser-form
+cd .. && python -c "
+import zipfile
+import os
+
+if os.path.exists('fill-browser-form.zip'):
+    os.remove('fill-browser-form.zip')
+
+files = [
+    'fill-browser-form/CONTRIBUTING.md',
+    'fill-browser-form/LICENSE',
+    'fill-browser-form/README.md',
+    'fill-browser-form/Skill.md'
+]
+
+with zipfile.ZipFile('fill-browser-form.zip', 'w', zipfile.ZIP_DEFLATED) as zf:
+    for file in files:
+        arcname = file.replace(os.sep, '/')
+        zf.write(file, arcname)
+
+print('Created fill-browser-form.zip')
+" && cd fill-browser-form
 ```
 
-This creates a ZIP with the correct structure where `fill-browser-form/` is the root folder containing `Skill.md` and other files.
+**Bash/sh (Linux/Mac):**
+
+```bash
+cd .. && zip -r fill-browser-form.zip fill-browser-form -x "fill-browser-form/.git/*" && cd fill-browser-form
+```
+
+**Important:** Do not use PowerShell's `Compress-Archive` as it creates backslashes in paths which causes "invalid path characters" errors in Claude Skills. Use the Python method above for Windows.
+
+This creates a ZIP with the correct structure where `fill-browser-form/` is the root folder containing `Skill.md` and other files with forward-slash separators.
 
 Then upload the generated `fill-browser-form.zip` to Claude at Settings > Capabilities > Skills
 
@@ -68,7 +90,7 @@ Contributions are welcome! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for gui
 
 ## Version
 
-1.0.0
+1.0.1
 
 ## License
 
