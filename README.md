@@ -1,6 +1,24 @@
 # Browser Form Filler Skill
 
-A Claude Skill that helps automate web form filling using browser DevTools console JavaScript.
+A prompt that helps automate web form filling using browser DevTools console. Can be used as a Claude skill.
+
+## How to use:
+
+### Quickest way to try (Works with ChatGPT and Claude)
+
+Paste your data and then use this prompt: "Fill in this data using this method: https://raw.githubusercontent.com/johan-gorter/fill-browser-form/refs/heads/main/Skill.md"
+
+### Quickest way with Gemini 3:
+
+Paste your data and then use the prompt: "Fill in this data" then copy-past the content of [Skill.md](https://raw.githubusercontent.com/johan-gorter/fill-browser-form/refs/heads/main/Skill.md).
+
+### Permanent installation in Claude:
+
+1. Download the latest release ZIP from [here](https://github.com/johan-gorter/fill-browser-form/releases/latest/download/fill-browser-form.zip)
+2. Go to Claude → Settings → Capabilities → Skills → Upload Skill
+3. Upload the ZIP file
+4. Enable the skill
+5. Use a prompt like: "Fill in this data in my browser"
 
 ## What This Skill Does
 
@@ -9,26 +27,6 @@ This Skill guides Claude to help users:
 - Extract HTML structure from web pages
 - Analyze form fields and their structure
 - Generate JavaScript snippets that automate form filling
-- Handle dynamic content, timing, and event triggering properly
-
-## How to Use
-
-1. Upload this skill to Claude via the Skills interface
-2. Ask Claude to help you fill a web form
-3. Claude will guide you through:
-   - Extracting the page HTML using a DevTools snippet
-   - Analyzing the structure
-   - Generating a custom script for your specific form
-   - Running the script in your browser
-
-## Installation
-
-### Quick Install
-
-1. Download [fill-browser-form.zip](https://github.com/johan-gorter/fill-browser-form/releases/latest/download/fill-browser-form.zip)
-2. Go to Claude → Settings → Capabilities → Skills
-3. Upload the ZIP file
-4. Enable the skill
 
 ### Manual Installation (for development)
 
@@ -81,7 +79,6 @@ Claude will then use this skill to guide you through the process of creating a c
 ## Requirements
 
 - Web browser with DevTools (Chrome, Edge, Firefox, etc.)
-- Access to paste content into Claude
 - Basic understanding of running JavaScript in browser console
 
 ## Contributing
